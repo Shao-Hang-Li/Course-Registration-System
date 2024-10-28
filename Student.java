@@ -3,19 +3,18 @@ package CourseRegistrationSystem;
 public class Student {
     // Variables and types declaration
     private final int studentID;                // Student ID number (Unique)
-    private final String studentFirstName;      // Student first name
-    private final String studentLastName;       // Student last name
+    private final String studentName;      // Student name
 
     // Constructor for Student (with their respective parameters)
     public Student(String studentFirstName, String studentLastName, int studentID) {
-        this.studentFirstName = studentFirstName;   // Set the student first name
-        this.studentLastName = studentLastName;     // Set the student last name
+        this.studentName = studentName;   // Set the student name
         this.studentID = studentID;                 // Set the student ID
     }
 
     // Getter for the student first name
-    public String getStudentFirstName() {
-        return studentFirstName;
+    public String getStudentName() {
+        return studentName;
+
     }
 
     // Getter for the student last name
@@ -31,6 +30,6 @@ public class Student {
     //Return the correct way for the String (override toString() from the Object class)
     @Override
     public String toString() {
-        return "Student ID: " + studentID + ", Name: " + studentFirstName + " " + studentLastName;
+        return "Student ID: " + studentID + ", Name: " + studentName;
     }
 }
