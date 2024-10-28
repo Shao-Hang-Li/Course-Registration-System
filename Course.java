@@ -1,19 +1,9 @@
 package CourseRegistrationSystem;
 
-
 import java.util.ArrayList;
 
 public class Course {
-    //Variables and types declaration for Course
-    private final String courseCode;
-    private final String courseName;
-    private final String professor;
-    private final int maxNumberStudents;
-    private int courseEnrolled;
-
-
-
-public class Course {
+    // Variables and types declaration for Course
     private final String courseCode;                        // Unique code for the course (Ex: IFT1015)
     private final String courseName;                        // Name of the course
     private final String professor;                         // Name of the professor for the specific course
@@ -28,11 +18,6 @@ public class Course {
     }
 
     // Getter for courseCode
-
-    public void setCourseEnrolled(int anInt){
-        this.courseEnrolled = anInt;
-    }
-
     public String getCourseCode() {
         return courseCode;
     }
@@ -58,7 +43,7 @@ public class Course {
             enrolledStudents.add(studentID);
             return true;
         }
-        return false; // Student already enrolled
+        return false;                                               // Student already enrolled
     }
 
     // Remove student from course (based on their ID)
