@@ -6,7 +6,7 @@ public class Student {
     private final String studentName;      // Student name
 
     // Constructor for Student (with their respective parameters)
-    public Student(String studentFirstName, String studentLastName, int studentID) {
+    public Student(String studentName, int studentID) {
         this.studentName = studentName;   // Set the student name
         this.studentID = studentID;                 // Set the student ID
     }
@@ -15,11 +15,6 @@ public class Student {
     public String getStudentName() {
         return studentName;
 
-    }
-
-    // Getter for the student last name
-    public String getStudentLastName() {
-        return studentLastName;
     }
 
     // Getter for the student ID
