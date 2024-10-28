@@ -20,11 +20,12 @@ public class UserInteraction {
 
             //try to get user input, if input is not an int from 1 to 6, throws an exception and exit.
             try {
+                System.out.printf("Choose an option: "); //used printf to not change to new line
                 userInput = input.nextInt();
                 if (userInput < 1 || userInput > 6) {
                     throw new InvalidChoiceException("Please enter a valid input from 1-6!");
                 }
-            } catch (Exception e) {
+            } catch (Exception e) { //catches all exceptions and displays corresponding message
                 System.out.printf("Exception: %s %n", e);
                 break;
             }
@@ -35,6 +36,9 @@ public class UserInteraction {
 
             //add course
             if (userInput == 1) {
+                System.out.printf("%nEnter course name: ");
+                System.out.printf("%nEnter course code: ");
+                System.out.printf("%nEnter Instructor name: ");
 
             }
             //register student
