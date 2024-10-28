@@ -16,7 +16,7 @@ class StudentRegistration {
         student[0] = new Student(1, "Johnny Test");
         //second student
         student[1] = new Student(2, "Mary Joseph");
-        //input for third student
+        //third student
         student[2] = new Student(3, "Seymour Skinner");
 
         System.out.println("Please enter the student id you would like to see");
@@ -51,5 +51,21 @@ class Student {
     public void display() {
         System.out.printf("Student number is: " + studentID + "%nThe student's name is: " + studentName);
         System.out.println();
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public int getStudentID() {
+        return studentID;
+    }
+
+    public void setStudentName(String aStudentName) {
+        this.studentName = aStudentName;
+    }
+
+    public void setStudentID(int aStudentID) {
+        this.studentID = aStudentID;
     }
 }
