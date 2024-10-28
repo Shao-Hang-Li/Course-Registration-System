@@ -1,41 +1,58 @@
 package CourseRegistrationSystem;
 
-public class Course {
-    //Variables and types declaration for Course
-    private final String courseCode;
-    private final String courseName;
-    private final String professor;
-    private final int maxNumberStudents;
-    private final int courseEnrolled;
+import java.util.ArrayList;
 
-    public Course(String courseCode, String courseName, String professor, int maxNumberStudents, int courseEnrolled) {
-        this.courseCode = courseCode;
-        this.courseName = courseName;
-        this.professor = professor;
-        this.maxNumberStudents = maxNumberStudents;
-        this.courseEnrolled = courseEnrolled;
+public class Course {
+    private final String courseCode;                        // Unique code for the course (Ex: IFT1015)
+    private final String courseName;                        // Name of the course
+    private final String professor;                         // Name of the professor for the specific course
+    private final ArrayList<Integer> enrolledStudents;      // List of student IDs
+
+    // Constructor for initializing Course object (Ex: IFT1015, Introduction to Programming, Alena Tsikhanovich)
+    public Course(String courseCode, String courseName, String professor) {
+        this.courseCode = courseCode;                       // Set course code
+        this.courseName = courseName;                       // Set course name
+        this.professor = professor;                         // Set professor name
+        this.enrolledStudents = new ArrayList<>();          // Arraylist for enrolled students (empty list)
     }
 
+    // Getter for courseCode
     public String getCourseCode() {
         return courseCode;
     }
 
+    // Getter for courseName
     public String getCourseName() {
         return courseName;
     }
-    
+
+    // Getter for professor name
     public String getProfessor() {
         return professor;
     }
 
-    public int getMaxNumberStudents() {
-        return maxNumberStudents;
+    // Getter for the list of enrolled students
+    public ArrayList<Integer> getEnrolledStudents() {
+        return enrolledStudents;
     }
 
-    public int getCourseEnrolled() {
-        return courseEnrolled;
+    // Register student in the course
+    public boolean registerStudent(int studentID) {
+        if (!enrolledStudents.contains(studentID)) {                // This is to avoid having multiple same student IDs (since ID is unique)
+            enrolledStudents.add(studentID);
+            return true;
+        }
+        return false; // Student already enrolled
+    }
+
+    // Remove student from course (based on their ID)
+    public boolean removeStudent(int studentID) {
+        return enrolledStudents.remove(Integer.valueOf(studentID)); // Remove if exists
+    }
+
+    //Return the correct way for the String
+    @Override
+    public String toString() {
+        return "Course Code: " + courseCode + ", Name: " + courseName + ", Professor: " + professor;
     }
 }
-
-
-//Notes: This is just the beginning, I am not sure yet if I want to add more features such as schedule, etc. But I will start with this and work my way up later.
