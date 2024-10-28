@@ -51,14 +51,14 @@ public class UserInteraction {
                 instructor = input.nextLine();
 
                 //If input is not a int or a negative number, raise exception
-                try {
+                /*try {
                     System.out.printf("Enter Max amount of seats: ");
                     maxSeat = input.nextInt();
                     if (maxSeat <= 0) {
                         throw new InvalidUserInput("Max number of seats cannot be zero or negative!");
                     }
                     else{//cases if no exceptrion was thrown
-                        Course aCourse = new Course(courseCode, courseName, instructor, maxSeat);//waiting for course.java to be updated
+                        Course aCourse = new Course(courseCode, courseName, instructor, maxSeats);//waiting for course.java to be updated
                         
                         //TO DO: add to ArrayList and display
 
@@ -70,7 +70,17 @@ public class UserInteraction {
                     }
                 } catch (Exception e) {
                     System.out.printf("%nException: %s %n", e);
-                }
+                }*/
+                Course aCourse = new Course(courseCode, courseName, instructor);//waiting for course.java to be updated
+                        
+                
+                //TO DO: add to ArrayList and display
+
+
+
+
+
+
 
             }
             //register student into a course
@@ -158,7 +168,7 @@ public class UserInteraction {
 
 
             }
-            
+
             //exit option is not needed since all it does is leaving and will automatically end the while loop.
         }
         input.close();
