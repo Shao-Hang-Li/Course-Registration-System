@@ -1,26 +1,36 @@
 package CourseRegistrationSystem;
 
-class Student {
-    private int studentID;
-    private String studentFirstName;
-    private String studentLastName;
+public class Student {
+    // Variables and types declaration
+    private final int studentID;                // Student ID number (Unique)
+    private final String studentFirstName;      // Student first name
+    private final String studentLastName;       // Student last name
 
+    // Constructor for Student (with their respective parameters)
     public Student(String studentFirstName, String studentLastName, int studentID) {
-        this.studentFirstName = studentFirstName;
-        this.studentLastName = studentLastName;
-        this.studentID = studentID;
+        this.studentFirstName = studentFirstName;   // Set the student first name
+        this.studentLastName = studentLastName;     // Set the student last name
+        this.studentID = studentID;                 // Set the student ID
     }
 
-    public String getStudentName() {
+    // Getter for the student first name
+    public String getStudentFirstName() {
         return studentFirstName;
     }
 
-    public int getStudentID() {
-        return studentID;
-    }
-
+    // Getter for the student last name
     public String getStudentLastName() {
         return studentLastName;
     }
 
+    // Getter for the student ID
+    public int getStudentID() {
+        return studentID;
+    }
+
+    //Return the correct way for the String (override toString() from the Object class)
+    @Override
+    public String toString() {
+        return "Student ID: " + studentID + ", Name: " + studentFirstName + " " + studentLastName;
+    }
 }
