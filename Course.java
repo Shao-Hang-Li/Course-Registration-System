@@ -6,7 +6,8 @@ public class Course {
     private final String courseName;
     private final String professor;
     private final int maxNumberStudents;
-    private final int courseEnrolled;
+    private int courseEnrolled;
+
 
     public Course(String courseCode, String courseName, String professor, int maxNumberStudents, int courseEnrolled) {
         this.courseCode = courseCode;
@@ -14,6 +15,10 @@ public class Course {
         this.professor = professor;
         this.maxNumberStudents = maxNumberStudents;
         this.courseEnrolled = courseEnrolled;
+    }
+
+    public void setCourseEnrolled(int anInt){
+        this.courseEnrolled = anInt;
     }
 
     public String getCourseCode() {
