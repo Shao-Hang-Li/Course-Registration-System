@@ -1,3 +1,4 @@
+package CourseRegistrationSystem;
 /**
  * registration System by Qi He, Shaohang Li, John Nicholas
  * 

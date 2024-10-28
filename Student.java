@@ -1,3 +1,5 @@
+package CourseRegistrationSystem;
+
 class Student {
     private int studentID;
     private String studentFirstName;
