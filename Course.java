@@ -1,6 +1,17 @@
 package CourseRegistrationSystem;
 
+
 import java.util.ArrayList;
+
+public class Course {
+    //Variables and types declaration for Course
+    private final String courseCode;
+    private final String courseName;
+    private final String professor;
+    private final int maxNumberStudents;
+    private int courseEnrolled;
+
+
 
 public class Course {
     private final String courseCode;                        // Unique code for the course (Ex: IFT1015)
@@ -17,6 +28,11 @@ public class Course {
     }
 
     // Getter for courseCode
+
+    public void setCourseEnrolled(int anInt){
+        this.courseEnrolled = anInt;
+    }
+
     public String getCourseCode() {
         return courseCode;
     }
