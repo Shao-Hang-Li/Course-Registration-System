@@ -8,6 +8,7 @@ public class Course {
     private final int maxNumberStudents;
     private int courseEnrolled;
 
+
     public Course(String courseCode, String courseName, String professor, int maxNumberStudents, int courseEnrolled) {
         this.courseCode = courseCode;
         this.courseName = courseName;
