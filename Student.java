@@ -2,25 +2,19 @@ package CourseRegistrationSystem;
 
 class Student {
     private int studentID;
-    private String studentFirstName;
-    private String studentLastName;
+    private String studentName;
 
-    public Student(String studentFirstName, String studentLastName, int studentID) {
-        this.studentFirstName = studentFirstName;
-        this.studentLastName = studentLastName;
+    public Student(String studentName, int studentID) {
+        this.studentName = studentName;
         this.studentID = studentID;
     }
 
     public String getStudentName() {
-        return studentFirstName;
+        return studentName;
     }
 
     public int getStudentID() {
         return studentID;
-    }
-
-    public String getStudentLastName() {
-        return studentLastName;
     }
 
 }
