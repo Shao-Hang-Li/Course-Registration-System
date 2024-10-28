@@ -22,9 +22,4 @@ public class Student {
         return studentID;
     }
 
-    //Return the correct way for the String (override toString() from the Object class)
-    @Override
-    public String toString() {
-        return "Student ID: " + studentID + ", Name: " + studentName;
-    }
 }
