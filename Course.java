@@ -43,6 +43,16 @@ public class Course {
         return false;                                          // Student already enrolled
     }
 
+    //check if a student is enrolled
+    public boolean ifStudentEnrolled(int studentID){
+        if (enrolledStudents.contains(studentID)) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     // Display the course information
     public String displayCourseInfo() {
         return courseCode + ", " + courseName + ", " + professor;
