@@ -38,7 +38,7 @@ public class CourseRegistration {
                 }*/
         
         courses.add(new Course(courseCode, courseName, professor));
-        System.out.println("Course added successfully!");
+        System.out.printf("Course added successfully! Course Name: %s, Course Code: %s, Professor: %s.%n", courseName, courseCode, professor);
     }
 
     //register student into a course
