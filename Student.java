@@ -28,9 +28,8 @@ public class Student {
         return studentID;
     }
 
-    //Return the correct way for the String (override toString() from the Object class)
-    @Override
-    public String toString() {
+    // Display the student information by returning a string (studentID, studentFirstName, studentLastName)
+    public String displayStudentInfo() {
         return "Student ID: " + studentID + ", Name: " + studentFirstName + " " + studentLastName;
     }
 }
