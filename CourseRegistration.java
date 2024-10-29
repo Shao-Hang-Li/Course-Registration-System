@@ -166,6 +166,7 @@ public class CourseRegistration {
 
     }
 
+    //takes student ID from user and returns courses enrolled by course name
     private void checkCourseEnrolled(){
         System.out.print("Enter student ID to search: ");
         try {
