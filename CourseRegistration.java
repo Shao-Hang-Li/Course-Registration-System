@@ -5,12 +5,12 @@ package CourseRegistrationSystem;
  * 
  * This class performs registration management.
  * It contains the following methods:
- * 1. enroll new student
- * 2. get spots left
- * 3. register a new course (to be changed into arraylist)
- * 4. get registration detail for all courses (to be changed to read from arraylist)
- * 5. update the course arraylist (find corresponding array and update it)
- * 6. add new student to student arraylist (add to arraylist)
+ * 1. add new course
+ * 2. display all course objects
+ * 3. add new student
+ * 4. display all student objects
+ * 5. register student to a course
+ * 6. check courses enrolled of a student by student ID
  */
 //import libraries to read from file and write into file
 

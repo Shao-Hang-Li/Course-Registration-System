@@ -1,0 +1,48 @@
+Pseudocode for main functions
+
+Add New Course method:
+    - ask user to input course code, course name and professor name.
+    - make sure input course code has not been registered.
+    - Create new course object with the data collected.
+    - store course info into an array list.
+    - Display the data collected to the user.
+
+Display Courses method:
+    for every course object stored in the array list:
+        - get course info.
+        - display course info.
+
+Add New Student method:
+    - ask user to input student ID and student name.
+    - make sure input value is valid and not registered already by comparing with arraylist.
+    - creat new student object with data collected.
+    - store new student object in arraylist.
+    - display info to user.
+
+Display all students method:
+    - read student objects from arraylist.
+    - get student ID and name.
+    - display student ID and name.
+
+Register Student to a course method:
+    - get course code from user
+    - get student ID from user
+    for every course object in course array list:
+        - compare if course code equals to course code stored in objects
+        - if so, get the course object.
+        - otherwise, display invalid input.
+    for every student object in student array list:
+        - compare if student ID equals to student ID stored in objects.
+        - if so, get the student object.
+        - otherwise, display invalid input.
+    - check enrolled student array list to see if student is already enrolled.
+    - if not, use the student ID and add to the arraylist.
+
+Check Course Enrolled method:
+    - get student ID from user.
+    - check if input is valid.
+    - for course object in all registered courses:
+        - compare each enrolled student arraylist to see if student is enrolled.
+        - if so, display course name.
+
+
