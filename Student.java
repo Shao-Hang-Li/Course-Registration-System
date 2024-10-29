@@ -22,4 +22,10 @@ public class Student {
         return studentID;
     }
 
+
+    // Display the student information by returning a string (studentID, studentFirstName, studentLastName)
+    public String displayStudentInfo() {
+        return "Student ID: " + studentID + ", Name: " + studentFirstName + " " + studentLastName;
+    }
 }
+

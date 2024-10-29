@@ -1,119 +1,161 @@
 package CourseRegistrationSystem;
 
-import java.util.*;
+/**
+ * registration System by Qi He, Shaohang Li, John Nicholas
+ * 
+ * This class performs registration management.
+ * It contains the following methods:
+ * 1. enroll new student
+ * 2. get spots left
+ * 3. register a new course (to be changed into arraylist)
+ * 4. get registration detail for all courses (to be changed to read from arraylist)
+ * 5. update the course arraylist (find corresponding array and update it)
+ * 6. add new student to student arraylist (add to arraylist)
+ */
+//import libraries to read from file and write into file
+
+package CourseRegistrationSystem;
+
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CourseRegistration {
     private final ArrayList<Course> courses = new ArrayList<>();
     private final ArrayList<Student> students = new ArrayList<>();
-    Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner;  // Scanner instance for user input
 
+    // Scanner
+    public CourseRegistration() {
+        scanner = new Scanner(System.in); // Initialize the Scanner
+    }
+
+    // Main to run the application
+    public static void main(String[] args) {
+        CourseRegistration application = new CourseRegistration();
+        application.run();
+    }
+
+    // Method to run the application
+    public void run() {
+        int option;
+        do {
+            displayMenu();
+            option = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+            switch (option) {
+                case 1: addCourse(); 
+                break;
+                case 2: displayCourses(); 
+                break;
+                case 3: addStudent(); 
+                break;
+                case 4: displayStudents(); 
+                break;
+                case 5: registerStudentForCourse(); 
+                break;
+                case 6: System.out.println("Exiting the system."); 
+                break;
+                default: System.out.println("Invalid option. Try again.");
+            }
+        } while (option != 6);
+        scanner.close(); // Close the scanner when done
+    }
+
+    // Display menu for all the options
+    public void displayMenu() {
+        System.out.println("\nCourse Registration System");
+        System.out.println("1. Add Course");
+        System.out.println("2. Display Courses");
+        System.out.println("3. Add Student");
+        System.out.println("4. Display Students");
+        System.out.println("5. Register Student for the Course");
+        System.out.println("6. Exit");
+        System.out.print("Choose an option: ");
+    }
+
+    // Add Course method
     public void addCourse() {
-
         System.out.print("Enter course code: ");
         String courseCode = scanner.nextLine();
         System.out.print("Enter course name: ");
         String courseName = scanner.nextLine();
         System.out.print("Enter professor name: ");
         String professor = scanner.nextLine();
-            //max seats if needed
-                /*try {
-                    System.out.printf("Enter Max amount of seats: ");
-                    maxSeat = input.nextInt();
-                    if (maxSeat <= 0) {
-                        throw new InvalidUserInput("Max number of seats cannot be zero or negative!");
-                    }
-                    else{//cases if no exceptrion was thrown
-                        Course aCourse = new Course(courseCode, courseName, instructor, maxSeats);//waiting for course.java to be updated
-                        
-                        //TO DO: add to ArrayList and display
-
-
-
-
-
-
-                    }
-                } catch (Exception e) {
-                    System.out.printf("%nException: %s %n", e);
-                }*/
         
         courses.add(new Course(courseCode, courseName, professor));
-        System.out.printf("Course added successfully! Course Name: %s, Course Code: %s, Professor: %s.%n", courseName, courseCode, professor);
+        System.out.println("Course added: courseCode='" + courseCode + "', courseName='" + courseName + "', professor='" + professor + "'");
     }
 
-    //register student into a course
-    public void registerStudent(){
-        String courseName, courseCode, instructor, studentName;
-        int maxSeat, studentNumber;
-        System.out.printf("Enter student name: ");
-        studentName = scanner.nextLine();
-
-        System.out.printf("Enter student number: ");
-        try {   //if user input is not an int, throw error message
-            studentNumber = scanner.nextInt();
-
-            System.out.printf("Enter course code: ");
-            courseCode = scanner.next();
-
-        } catch (Exception e) {
-            System.out.printf("Exception: %s %n", e);//throw exception message
+    // Display Course method
+    public void displayCourses() {
+        System.out.println("Courses:");
+        for (Course course : courses) {
+            System.out.println(course.displayCourseInfo());
         }
-
-        //TO DO: use the variables to register student into a course, remove unused variables later
-
-
-
     }
 
-    //This method reads from arraylist and prints info for all courses.
-    public void getAllCourses(){
-        //TO DO: read from arraylist and print info for all courses. maybe for (type element_name : Array){} ?
-
-
-
-
-    }
-
-    public void addNewStudent(){
-        String studentName;
-        int studentNumber;
-        System.out.printf("Enter student name: ");
-        studentName = scanner.nextLine();
-
-        System.out.printf("Enter student number: ");
-        try {   //if user input is not an int, throw error message
-            studentNumber = scanner.nextInt();
-
-            students.add(new Student(studentName, studentNumber));
-            System.out.printf("New student registered! Student Name: %s, Student Number: %d.%n", studentName, studentNumber);
-
-
-        } catch (Exception e) {
-            System.out.printf("Exception: %s %n", e);//throw exception message
-        }
-
-
-    }
-
-    public void getAllStudents(){
-        //TO DO: read from arraylist and print info for all students. maybe for (type element_name : Array){} ?
-
-    }
-
-    public void removeCourse() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter course code to remove: ");
-        String courseCode = scanner.nextLine();
+    // Student management methods
+    public void addStudent() {
+        System.out.print("Enter student ID: ");
+        int studentID = scanner.nextInt();
+        scanner.nextLine();                                     // Scan New line
+        System.out.print("Enter student first name: ");
+        String studentFirstName = scanner.nextLine();
+        System.out.print("Enter student last name: ");
+        String studentLastName = scanner.nextLine();
         
-        Course course = findCourseByCode(courseCode);
-        if (course != null) {
-            courses.remove(course);
-            System.out.println("Course " + courseCode + " removed successfully.");
-        } else {
-            System.out.println("Course not found.");
+        students.add(new Student(studentFirstName, studentLastName, studentID));
+        System.out.println("Student added: studentID=" + studentID + ", studentFirstName='" + studentFirstName + "', studentLastName='" + studentLastName + "'");
+    }
+
+    // Display the students
+    public void displayStudents() {
+        System.out.println("Students:");
+        for (Student student : students) {
+            System.out.println(student.displayStudentInfo());
         }
     }
 
+    // Registration methods
+    public void registerStudentForCourse() {
+        System.out.print("Enter course code to register: ");
+        String courseCode = scanner.nextLine();
+        System.out.print("Enter student ID to register: ");
+        int studentID = scanner.nextInt();
 
+        Course course = findCourseByCode(courseCode);
+        Student student = findStudentByID(studentID);
 
+        // This is to check if you already registered or is missing informations
+        if (course != null && student != null) {
+            if (course.registerStudent(studentID)) {
+                System.out.println("Student registered successfully for " + courseCode);
+            } else {
+                System.out.println("Student is already registered for this course.");
+            }
+        } else {
+            System.out.println("Course or Student not found.");
+        }
+    }
+
+    // Find the Course Code
+    private Course findCourseByCode(String courseCode) {
+        for (Course course : courses) {
+            if (course.getCourseCode().equals(courseCode)) {
+                return course;
+            }
+        }
+        return null;
+    }
+
+    // Find the Student ID
+    private Student findStudentByID(int studentID) {
+        for (Student student : students) {
+            if (student.getStudentID() == studentID) {
+                return student;
+            }
+        }
+        return null;
+    }
 }
+
