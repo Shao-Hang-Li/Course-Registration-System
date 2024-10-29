@@ -1,4 +1,5 @@
 package CourseRegistrationSystem;
+
 /**
  * registration System by Qi He, Shaohang Li, John Nicholas
  * 
@@ -12,6 +13,9 @@ package CourseRegistrationSystem;
  * 6. add new student to student arraylist (add to arraylist)
  */
 //import libraries to read from file and write into file
+
+package CourseRegistrationSystem;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -154,3 +158,4 @@ public class CourseRegistration {
         return null;
     }
 }
+

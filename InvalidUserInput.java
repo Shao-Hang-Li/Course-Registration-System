@@ -2,12 +2,12 @@ package CourseRegistrationSystem;
 
 //Defining custom Exception that is thrown when invalid choice is given by user
 
-public class InvalidChoiceException extends RuntimeException{
-    public InvalidChoiceException(String message) {
+public class InvalidUserInput extends RuntimeException{
+    public InvalidUserInput(String message) {
         super(message);        
     }
 
-    public InvalidChoiceException(String message, Throwable cause) {
+    public InvalidUserInput(String message, Throwable cause) {
         super(message, cause);
     }
 }

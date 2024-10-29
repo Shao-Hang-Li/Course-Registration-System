@@ -1,1 +1,0 @@
-123456,Physics,Jhon Smith,30,16,123457,Chemistry,Jane Doe,39,15,135468,Philosophy,Albert Ink,40,19,
