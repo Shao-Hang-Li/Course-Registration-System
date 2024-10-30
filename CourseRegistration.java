@@ -1,5 +1,9 @@
 package CourseRegistrationSystem;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
 /**
  * registration System by Qi He, Shaohang Li, John Nicholas
  * 
@@ -11,29 +15,45 @@ package CourseRegistrationSystem;
  * 4. display all student objects
  * 5. register student to a course
  * 6. check courses enrolled of a student by student ID
+ * 
+ * @see Student
+ * @see Course
  */
-//import libraries to read from file and write into file
 
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class CourseRegistration {
+    /**
+     * Arraylist for courses
+     */
     private final ArrayList<Course> courses = new ArrayList<>();
+    /**
+     * Arralist for students
+     */
     private final ArrayList<Student> students = new ArrayList<>();
+    /**
+     * Scanner for inputs
+     */
     private final Scanner scanner;  // Scanner instance for user input
 
-    // Scanner
+    /**
+     * Initilization for the scanner
+     */
     public CourseRegistration() {
         scanner = new Scanner(System.in); // Initialize the Scanner
     }
 
-    // Main to run the application
+    /**
+     * The main method to run the entire program
+     * @param args
+     */
     public static void main(String[] args) {
         CourseRegistration application = new CourseRegistration();
         application.run();
     }
 
-    // Method to run the application
+    /**
+     * Method for allowing registration to run
+     */
     public void run() {
         int option;
         do {
@@ -61,7 +81,9 @@ public class CourseRegistration {
         scanner.close(); // Close the scanner when done
     }
 
-    // Display menu for all the options
+    /**
+     * Void for displaying the menu
+     */
     public void displayMenu() {
         System.out.println("\nCourse Registration System");
         System.out.println("1. Add Course");
@@ -74,7 +96,9 @@ public class CourseRegistration {
         System.out.print("Choose an option: ");
     }
 
-    // Add Course method
+    /**
+     * Void for adding courses
+     */
     public void addCourse() {
         System.out.print("Enter course code: ");
         String courseCode = scanner.nextLine();
@@ -82,7 +106,6 @@ public class CourseRegistration {
         String courseName = scanner.nextLine();
         System.out.print("Enter professor name: ");
         String professor = scanner.nextLine();
-        //try method to avoid registration repitition
         try {
             if (findCourseByCode(courseCode) != null) {
                 throw new InvalidUserInput("Course already exist. Registration failed.");
@@ -96,7 +119,9 @@ public class CourseRegistration {
         
     }
 
-    // Display Course method
+    /**
+     * void for displaying courses
+     */
     public void displayCourses() {
         System.out.println("Courses:");
         for (Course course : courses) {
@@ -104,7 +129,9 @@ public class CourseRegistration {
         }
     }
 
-    // Student management methods
+    /**
+     * void for adding students
+     */
     public void addStudent() {
         System.out.print("Enter student ID: ");
         //try method to prevent break
@@ -129,7 +156,9 @@ public class CourseRegistration {
         }
     }
 
-    // Display the students
+    /**
+     * void for displaying students
+     */
     public void displayStudents() {
         System.out.println("Students:");
         for (Student student : students) {
@@ -137,7 +166,9 @@ public class CourseRegistration {
         }
     }
 
-    // Registration methods
+    /**
+     * void for registering students
+     */
     public void registerStudentForCourse() {
         System.out.print("Enter course code to register: ");
         String courseCode = scanner.nextLine();
@@ -166,7 +197,9 @@ public class CourseRegistration {
 
     }
 
-    //takes student ID from user and returns courses enrolled by course name
+    /**
+     * void for checking course enrollment
+     */
     private void checkCourseEnrolled(){
         System.out.print("Enter student ID to search: ");
         try {
@@ -189,7 +222,11 @@ public class CourseRegistration {
     }
 
 
-    // Find the Course Code
+    /**
+     * void for finding course codes
+     * @param courseCode
+     * @return
+     */
     private Course findCourseByCode(String courseCode) {
         for (Course course : courses) {
             if (course.getCourseCode().equals(courseCode)) {
@@ -199,7 +236,11 @@ public class CourseRegistration {
         return null;
     }
 
-    // Find the Student ID
+    /**
+     * void for finding student ID
+     * @param studentID
+     * @return
+     */
     private Student findStudentByID(int studentID) {
         for (Student student : students) {
             if (student.getStudentID() == studentID) {
