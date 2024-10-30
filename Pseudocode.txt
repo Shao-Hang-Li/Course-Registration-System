@@ -14,7 +14,8 @@ Display Courses method:
 
 Add New Student method:
     - ask user to input student ID and student name.
-    - make sure input value is valid and not registered already by comparing with arraylist.
+    - make sure input value is valid 
+    - make sure student is not registered already by comparing with arraylist.
     - creat new student object with data collected.
     - store new student object in arraylist.
     - display info to user.
@@ -30,17 +31,21 @@ Register Student to a course method:
     for every course object in course array list:
         - compare if course code equals to course code stored in objects
         - if so, get the course object.
-        - otherwise, display invalid input.
+        - otherwise, get null.
     for every student object in student array list:
         - compare if student ID equals to student ID stored in objects.
         - if so, get the student object.
-        - otherwise, display invalid input.
-    - check enrolled student array list to see if student is already enrolled.
-    - if not, use the student ID and add to the arraylist.
+        - otherwise, get null.
+    if both course and student object obatained correctly:
+        - check enrolled student array list to see if student is already enrolled.
+        - if not, use the student ID and add to the arraylist.
+        - if the student is already enrolled, display error message.
 
 Check Course Enrolled method:
     - get student ID from user.
-    - check if input is valid.
+    - get the student object from arraylist, if not found, get null.
+    - if null, display error message.
+    - else, get student name from student object.
     - for course object in all registered courses:
         - compare each enrolled student arraylist to see if student is enrolled.
         - if so, display course name.

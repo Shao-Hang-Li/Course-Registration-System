@@ -178,7 +178,7 @@ public class CourseRegistration {
     public void displayStudents() {                          //Display student method
         System.out.println("\nStudents:");                 //Add new line to space out
 
-        for (Student student : students) {                   //for each loops that goes through all the student in the students list
+        for (Student student : students) {                   //for loop iterates through all the student in the students list
             System.out.printf("%s %n", student.displayStudentInfo());//display student objects
             System.out.println("-------------------------------------------");
         }
