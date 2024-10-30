@@ -35,9 +35,9 @@ public class Course {
     private final ArrayList<Integer> enrolledStudents;       // List of student IDs
     /**
      * This is the setter for the course code, course name, professor, and enrolled students
-     * @param courseCode
-     * @param courseName
-     * @param professor
+     * @param courseCode initilize course code
+     * @param courseName initilize course name
+     * @param professor initilize professer
      */
     // Constructor for initializing Course object
     public Course(String courseCode, String courseName, String professor) {
@@ -49,36 +49,36 @@ public class Course {
 
     /**
      * Shows course code
-     * @return
+     * @return shows course code
      */
     public String getCourseCode() {
         return courseCode;
     }
     /**
      * Shows course name
-     * @return
+     * @return course name
      */
     public String getCourseName() {
         return courseName;
     }
     /**
      * Shows professor
-     * @return
+     * @return professer
      */
     public String getProfessor() {
         return professor;
     }
     /**
      * Shows enrolled students
-     * @return
+     * @return enrolled students
      */
     public ArrayList<Integer> getEnrolledStudents() {
         return enrolledStudents;
     }
     /**
      * This method allows a student to be registered in a course based on their student ID
-     * @param studentID
-     * @return
+     * @param studentID allows students to be enrolled in class
+     * @return if students are already registered
      */
     // Register student in the course
     public boolean registerStudent(int studentID) {
@@ -91,8 +91,8 @@ public class Course {
 
     /**
      * This method determines if a student is already enrolled in a class.
-     * @param studentID
-     * @return
+     * @param studentID sees if student is already in class
+     * @return if student is already in class or not
      */
     public boolean ifStudentEnrolled(int studentID){
         if (enrolledStudents.contains(studentID)) {
@@ -105,7 +105,7 @@ public class Course {
 
     /**
      * This method displays the full code, name and professer of the course
-     * @return
+     * @return display for the course code, name, and professer
      */
     public String displayCourseInfo() {
         return courseCode + ", " + courseName + ", " + professor;

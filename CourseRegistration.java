@@ -44,7 +44,8 @@ public class CourseRegistration {
 
     /**
      * The main method to run the entire program
-     * @param args
+     * @param args arguments for main
+     * 
      */
     public static void main(String[] args) {
         CourseRegistration application = new CourseRegistration();
@@ -224,8 +225,8 @@ public class CourseRegistration {
 
     /**
      * void for finding course codes
-     * @param courseCode
-     * @return
+     * @param courseCode used to find course code
+     * @return course code selected
      */
     private Course findCourseByCode(String courseCode) {
         for (Course course : courses) {
@@ -238,8 +239,8 @@ public class CourseRegistration {
 
     /**
      * void for finding student ID
-     * @param studentID
-     * @return
+     * @param studentID search fo student id
+     * @return student id selected
      */
     private Student findStudentByID(int studentID) {
         for (Student student : students) {

@@ -22,8 +22,8 @@ public class Student {
 
     /**
      * Allows the student name and id to be set.
-     * @param studentName
-     * @param studentID
+     * @param studentName Sets student name
+     * @param studentID Sets student ID
      */
     public Student(String studentName, int studentID) {
         this.studentName = studentName;   // Set the student name
@@ -31,8 +31,8 @@ public class Student {
     }
 
     /**
-     * shows Student Name
-     * @return
+     * getter for student name
+     * @return shows student name
      */
     public String getStudentName() {
         return studentName;
@@ -40,8 +40,8 @@ public class Student {
     }
 
     /**
-     * Shows student ID
-     * @return
+     * getter for student id
+     * @return Shows student ID
      */
     public int getStudentID() {
         return studentID;
@@ -49,8 +49,8 @@ public class Student {
 
 
     /**
-     * Displays full infor for student ID and student Name
-     * @return
+     * Display method for student id and name
+     * @return display for student id
      */
     public String displayStudentInfo() {
         return "Student ID: " + studentID + ", Name: " + studentName;
