@@ -18,7 +18,7 @@ public class Student {
     /**
      * The student's name
      */
-    private final String studentName;      // Student name
+    private final String studentName;           // Student name
 
     /**
      * Allows the student name and id to be set.
@@ -26,8 +26,8 @@ public class Student {
      * @param studentID Sets student ID
      */
     public Student(String studentName, int studentID) {
-        this.studentName = studentName;   // Set the student name
-        this.studentID = studentID;                 // Set the student ID
+        this.studentName = studentName;         // Set the student name
+        this.studentID = studentID;             // Set the student ID
     }
 
     /**

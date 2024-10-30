@@ -1,6 +1,5 @@
 package CourseRegistrationSystem;
 
-
 import java.util.ArrayList;
 
 /** 
@@ -8,7 +7,7 @@ import java.util.ArrayList;
  * 
  * <p>This class keeps track of all of the courses for students to enroll in. Each student is recorded based on which class they choose.
  * 
- * @author Qi He, Shaohang Li, John Nicholas
+ * @author Qi He, Shao Hang Li, John Nicholas
  * @version 1.0
  * @since 2024-10-29
  * @see Student
@@ -35,9 +34,9 @@ public class Course {
     private final ArrayList<Integer> enrolledStudents;       // List of student IDs
     /**
      * This is the setter for the course code, course name, professor, and enrolled students
-     * @param courseCode initilize course code
-     * @param courseName initilize course name
-     * @param professor initilize professer
+     * @param courseCode initialize course code
+     * @param courseName initialize course name
+     * @param professor initialize professor
      */
     // Constructor for initializing Course object
     public Course(String courseCode, String courseName, String professor) {
@@ -51,28 +50,28 @@ public class Course {
      * Shows course code
      * @return shows course code
      */
-    public String getCourseCode() {
+    public String getCourseCode() {                         // Getter for Course code
         return courseCode;
     }
     /**
      * Shows course name
      * @return course name
      */
-    public String getCourseName() {
+    public String getCourseName() {                         // Getter for Course name
         return courseName;
     }
     /**
      * Shows professor
-     * @return professer
+     * @return professor
      */
-    public String getProfessor() {
+    public String getProfessor() {                          // Getter for Professor
         return professor;
     }
     /**
      * Shows enrolled students
      * @return enrolled students
      */
-    public ArrayList<Integer> getEnrolledStudents() {
+    public ArrayList<Integer> getEnrolledStudents() {       // Getter for enrolled students
         return enrolledStudents;
     }
     /**
@@ -81,12 +80,12 @@ public class Course {
      * @return if students are already registered
      */
     // Register student in the course
-    public boolean registerStudent(int studentID) {
+    public boolean registerStudent(int studentID) {          // Logical method for registering students
         if (!enrolledStudents.contains(studentID)) {         // Avoid duplicate student IDs
-            enrolledStudents.add(studentID);
+            enrolledStudents.add(studentID);                 // If it doesn't contain the studentID, it can add the student ID
             return true;
         }
-        return false;                                          // Student already enrolled
+        return false;                                        // Student already enrolled
     }
 
     /**
@@ -95,7 +94,7 @@ public class Course {
      * @return if student is already in class or not
      */
     public boolean ifStudentEnrolled(int studentID){
-        if (enrolledStudents.contains(studentID)) {
+        if (enrolledStudents.contains(studentID)) {          // Check if student is already in the Course
             return true;
         }
         else{
@@ -104,10 +103,10 @@ public class Course {
     }
 
     /**
-     * This method displays the full code, name and professer of the course
-     * @return display for the course code, name, and professer
+     * This method displays the full code, name and professor of the course
+     * @return display for the course code, name, and professor
      */
-    public String displayCourseInfo() {
+    public String displayCourseInfo() {                     // Display course information
         return "Course Code: " + courseCode + "\n" + "Course Name: " + courseName + "\n" + "Professor: " + professor;
     }
 }
