@@ -199,8 +199,8 @@ public class CourseRegistration {
         try {
             studentID = scanner.nextInt();
 
-            course = courseByCode(courseCode);
-            student = studentByID(studentID);
+            course = courseByCode(courseCode);           //Find the course object that goes with the course code
+            student = studentByID(studentID);            //Find the student object that goes with the studentID
     
             // This is to check if you already registered or is missing informations by using conditional statement (AND logical operators, both sides must be TRUE)
             // https://www.geeksforgeeks.org/interesting-facts-about-null-in-java/ using null
@@ -208,13 +208,13 @@ public class CourseRegistration {
                 if (course.registerStudent(studentID)) {    //check if registration is completed
                     System.out.printf("You have registered successfully for %s.%n ", courseCode);  //Print the comment with the course code
                 } else {
-                    System.out.println("You are already registered for this course.");            //Print the comment that if he is already registered
+                    System.out.println("You are already registered for this course.");                  //Print the comment that if he is already registered
                 }
             } else {
-                System.out.println("Course or Student not found.");                               //Print not found if it doesn't exist
+                System.out.println("Course or Student not found.");                                     //Print not found if it doesn't exist
             }
     
-        } catch (Exception e) {                                                                     //prepared for inputting anything else than int
+        } catch (Exception e) {                                                                           //prepared for inputting anything else than int
             System.out.printf("Exception: %s %n", e);
         }
 
