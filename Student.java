@@ -53,7 +53,7 @@ public class Student {
      * @return display for student id
      */
     public String displayStudentInfo() {
-        return "Student ID: " + studentID + ", Name: " + studentName;
+        return "Student ID: " + studentID + "\n" + "Name: " + studentName;
     }
 }
 

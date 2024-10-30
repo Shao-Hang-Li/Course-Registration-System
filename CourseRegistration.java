@@ -59,21 +59,22 @@ public class CourseRegistration {
         int option;                         //declare variable to store user input option
         try {
             do {
-                displayMenu();                  //call display menu method to show menu options
+                displayMenu();                  //display menu method to show menu options
                 option = scanner.nextInt();     //take next integer
-                scanner.nextLine();             //Consume newline
-                switch (option) {               //call different functions according to user option
-                    case 1: addCourse();        //call add new course method
+                scanner.nextLine();            
+                System.out.println();           //New line
+                switch (option) {               //different functions according to user option
+                    case 1: addCourse();        //add new course method
                     break;                      //leave the loop
-                    case 2: displayCourses();   //call display new course method
+                    case 2: displayCourses();   //display new course method
                     break;
-                    case 3: addStudent();       //call add new student method
+                    case 3: addStudent();       //add new student method
                     break;
-                    case 4: displayStudents();  //call display all students method
+                    case 4: displayStudents();  //display all students method
                     break;
-                    case 5: registerStudentForCourse(); //call register student to a course method
+                    case 5: registerStudentForCourse(); //register student to a course method
                     break;
-                    case 6: checkCourseEnrolled();      //call display course enrolled method
+                    case 6: checkCourseEnrolled();      //display course enrolled method
                     break;
                     case 7: System.out.println("Exiting the system.");  //leave the loop option
                     break;
@@ -129,9 +130,10 @@ public class CourseRegistration {
      * void for displaying courses
      */
     public void displayCourses() {
-        System.out.println("Courses:");
+        System.out.println("\nCourses:");
         for (Course course : courses) {                 //access all cours object from array list
             System.out.println(course.displayCourseInfo()); //display course info
+            System.out.println("-------------------------------------------");
         }
     }
 
@@ -166,9 +168,10 @@ public class CourseRegistration {
      * void for displaying students
      */
     public void displayStudents() {
-        System.out.println("Students:");            
+        System.out.println("\nStudents:");            
         for (Student student : students) {              //iterate through array list to access all student object
             System.out.println(student.displayStudentInfo());//display student objects
+            System.out.println("-------------------------------------------");
         }
     }
 

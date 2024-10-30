@@ -108,6 +108,6 @@ public class Course {
      * @return display for the course code, name, and professer
      */
     public String displayCourseInfo() {
-        return courseCode + ", " + courseName + ", " + professor;
+        return "Course Code: " + courseCode + "\n" + "Course Name: " + courseName + "\n" + "Professor: " + professor;
     }
 }
