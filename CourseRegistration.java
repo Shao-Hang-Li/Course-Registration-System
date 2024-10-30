@@ -76,9 +76,9 @@ public class CourseRegistration {
                     break;
                     case 6: checkCourseEnrolled();      //display course enrolled method
                     break;
-                    case 7: System.out.println("Exiting the system.");  //leave the loop option
+                    case 7: System.out.println("Bye, have a wonderful day!");  //leave the loop option
                     break;
-                    default: System.out.println("Invalid option. Try again.");//invalid int input will trigger this
+                    default: System.out.println("Oh no! Try again!");//invalid int input will trigger this
                 }
             } while (option != 7);
         } catch (Exception e) {                 //handles if user enter invalid input ex.String 
