@@ -74,9 +74,9 @@ public class CourseRegistration {
                     break;
                     case 4: displayStudents();  //display all the students
                     break;
-                    case 5: registerStudentForCourse(); //register student to a course method (require ID and course ID)
+                    case 5: studentCourseRegistration(); //register student to a course method (require ID and course ID)
                     break;
-                    case 6: checkCourseEnrolled();      //display course enrolled 
+                    case 6: checkCourseEnrolled();       //display course enrolled 
                     break;
                     case 7: System.out.println("Bye, and have a wonderful day!");  //Exit
                     break;
@@ -119,7 +119,7 @@ public class CourseRegistration {
         String professor = scanner.nextLine();          //Input professor name and store as a String
 
         try {                                           //Exception handling to prevent program break 
-            if (findCourseByCode(courseCode) != null) { //Check if course already exist 
+            if (courseByCode(courseCode) != null) {     //Check if course already exist 
                 throw new InvalidUserInput("Course already exist. Registration failed.");
             }
 
@@ -138,7 +138,7 @@ public class CourseRegistration {
         System.out.println("\nCourses:");                                         // Add a new line to space out
 
         for (Course course : courses) {                                             // for each loop that goes over each Course object in the courses arraylist
-            System.out.printf("%s %n",course.displayCourseInfo());                         // display course info (return a String that we made in displayCourseInfo() in course.java)
+            System.out.printf("%s %n",course.displayCourseInfo());           // display course info (return a String that we made in displayCourseInfo() in course.java)
             System.out.println("-------------------------------------------");    // separation line
         }
     }
@@ -147,7 +147,7 @@ public class CourseRegistration {
      * void for adding students
      */
     public void addStudent() {                          //Add student method
-        System.out.printf("Enter student ID: ");       //Prompt to enter the student ID
+        System.out.printf("Enter student ID: "); //Prompt to enter the student ID
         
         //try method to prevent program break
         try {
@@ -160,7 +160,7 @@ public class CourseRegistration {
                 System.out.printf("Enter student name: ");
                 String studentName = scanner.nextLine();                //take student name and store as a String
 
-                if (findStudentByID(studentID) != null) {               //check if student already enrolled
+                if (studentByID(studentID) != null) {                   //check if student already enrolled
                     throw new InvalidUserInput("Student already exist. Registration failed.");
                 }
                 students.add(new Student(studentName, studentID));      //create student object and add to array list
@@ -187,20 +187,20 @@ public class CourseRegistration {
     /**
      * void for registering students
      */
-    public void registerStudentForCourse() {            //Register student for course method
-        int studentID;                                  //Variable and type declarations
-        Course course;                                  //Variable to hold the course object that goes with the course code
-        Student student;                                //Variable to hold the student object that goes with the studentID
+    public void studentCourseRegistration() {            //Register student for course method
+        int studentID;                                   //Variable and type declarations
+        Course course;                                   //Variable to hold the course object that goes with the course code
+        Student student;                                 //Variable to hold the student object that goes with the studentID
 
         System.out.print("Enter your course code to register: ");
-        String courseCode = scanner.nextLine();         //Input the courseCode and store as a String
+        String courseCode = scanner.nextLine();          //Input the courseCode and store as a String
         System.out.print("Enter your student ID to register: ");
         //try get to prevent invalid input, Invalid user input exception is not thrown here->simply student not found.
         try {
             studentID = scanner.nextInt();
 
-            course = findCourseByCode(courseCode);
-            student = findStudentByID(studentID);
+            course = courseByCode(courseCode);
+            student = studentByID(studentID);
     
             // This is to check if you already registered or is missing informations by using conditional statement (AND logical operators, both sides must be TRUE)
             // https://www.geeksforgeeks.org/interesting-facts-about-null-in-java/ using null
@@ -232,7 +232,7 @@ public class CourseRegistration {
 
         try {                                               //try catch to avoid program break with invalid input
             studentID = scanner.nextInt();                  //Input the student ID as an integer
-            student = findStudentByID(studentID);   // Try to get the student object with the student ID
+            student = studentByID(studentID);               // Try to get the student object with the student ID
 
             if (student == null) {                          //If the student ID doesn't exist
                 throw new InvalidUserInput("Invalid student ID."); //we throw an exception if the studentID doesn't exist
@@ -257,10 +257,10 @@ public class CourseRegistration {
      * @param courseCode used to find course code
      * @return course code selected
      */
-    private Course findCourseByCode(String courseCode) {    //Method for finding course code (used for registration and was planning to use it for remove, but didn't have time)
+    private Course courseByCode(String courseCode) {        //Method for finding course code (used for registration and was planning to use it for remove, but didn't have time)
         for (Course course : courses) {                     //For each loop that goes through all the course in the courses list
-            if (course.getCourseCode().equals(courseCode)) {//If the input equals a course code, it will return the course object
-                return course;
+            if (course.getCourseCode().equals(courseCode)) {//If the input equals a course code, it will return the course object (error if I use == due to comparing Strings )
+                return course;                              //(Codeium correction: VSC extension)
             }
         }
         return null;                                        //If it doesn't exist, return null
@@ -271,9 +271,9 @@ public class CourseRegistration {
      * @param studentID search fo student id
      * @return student id selected
      */
-    private Student findStudentByID(int studentID) {    //Method for finding student ID (used for registration and was planning to use it for remove, but didn't have time)
+    private Student studentByID(int studentID) {        //Method for finding student ID (used for registration and was planning to use it for remove, but didn't have time)
         for (Student student : students) {              //For each loop that goes through all the student in the students list
-            if (student.getStudentID() == studentID) {  //If input equals a student code, return the student object
+            if (student.getStudentID() ==studentID) {  //If input equals a student code, return the student object ==  (int cannot be dereferenced: Codeium correction)
                 return student;
             }
         }

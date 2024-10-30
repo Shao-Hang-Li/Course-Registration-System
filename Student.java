@@ -34,7 +34,7 @@ public class Student {
      * getter for student name
      * @return shows student name
      */
-    public String getStudentName() {
+    public String getStudentName() {        // Getter for student name
         return studentName;
 
     }
@@ -43,16 +43,15 @@ public class Student {
      * getter for student id
      * @return Shows student ID
      */
-    public int getStudentID() {
+    public int getStudentID() {             // Getter for student ID
         return studentID;
     }
-
 
     /**
      * Display method for student id and name
      * @return display for student id
      */
-    public String displayStudentInfo() {
+    public String displayStudentInfo() {    // Display method for student id and name
         return "Student ID: " + studentID + "\n" + "Name: " + studentName;
     }
 }

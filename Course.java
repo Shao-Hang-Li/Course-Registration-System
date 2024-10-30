@@ -53,6 +53,7 @@ public class Course {
     public String getCourseCode() {                         // Getter for Course code
         return courseCode;
     }
+    
     /**
      * Shows course name
      * @return course name
@@ -60,6 +61,7 @@ public class Course {
     public String getCourseName() {                         // Getter for Course name
         return courseName;
     }
+
     /**
      * Shows professor
      * @return professor
@@ -67,6 +69,7 @@ public class Course {
     public String getProfessor() {                          // Getter for Professor
         return professor;
     }
+
     /**
      * Shows enrolled students
      * @return enrolled students
@@ -74,6 +77,7 @@ public class Course {
     public ArrayList<Integer> getEnrolledStudents() {       // Getter for enrolled students
         return enrolledStudents;
     }
+
     /**
      * This method allows a student to be registered in a course based on their student ID
      * @param studentID allows students to be enrolled in class
