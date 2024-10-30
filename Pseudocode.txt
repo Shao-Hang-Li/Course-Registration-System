@@ -44,5 +44,3 @@ Check Course Enrolled method:
     - for course object in all registered courses:
         - compare each enrolled student arraylist to see if student is enrolled.
         - if so, display course name.
-
-
