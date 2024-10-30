@@ -1,4 +1,4 @@
-Pseudocode for main functions
+Pseudocode for main functions (adding course, registering a student and viewing registration)
 
 Add New Course method:
     - ask user to input course code, course name and professor name.
