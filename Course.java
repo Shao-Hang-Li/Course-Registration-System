@@ -53,7 +53,7 @@ public class Course {
     public String getCourseCode() {                         // Getter for Course code
         return courseCode;
     }
-    
+
     /**
      * Shows course name
      * @return course name
@@ -97,7 +97,7 @@ public class Course {
      * @param studentID sees if student is already in class
      * @return if student is already in class or not
      */
-    public boolean ifStudentEnrolled(int studentID){
+    public boolean studentAlreadyEnrolled(int studentID){
         if (enrolledStudents.contains(studentID)) {          // Check if student is already in the Course
             return true;
         }

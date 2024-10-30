@@ -241,7 +241,7 @@ public class CourseRegistration {
                 studentName = student.getStudentName();     //Get the student name
                 System.out.printf("%s is enrolled in the following courses (empty if none): %n", studentName);
                 for (Course course : courses) {                                   //For each loop that goes through all the course in the courses list
-                    if(course.ifStudentEnrolled(studentID)){                      //If Student is enrolled, print course
+                    if(course.studentAlreadyEnrolled(studentID)){                 //If Student is enrolled, print course
                         System.out.printf("%s %n", course.getCourseName());//displays course name
                     }
                 }
