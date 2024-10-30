@@ -6,6 +6,7 @@ package CourseRegistrationSystem;
  * 
  * 
  * @see Course
+ * @see CourseRegistration
  * 
  */ 
 public class Student {

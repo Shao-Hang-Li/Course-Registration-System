@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @version 1.0
  * @since 2024-10-29
  * @see Student
+ * @see CourseRegistration
  * 
  */ 
 public class Course {
