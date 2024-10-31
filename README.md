@@ -11,5 +11,10 @@ References for UML diagram:
 - https://lucid.app/documents#/home?folder_id=recent (diagram maker)
 
 References for Java:
+- Java_HOLs_09 (custom_exceptions) for the InvalidUserInput.java
 - https://www.geeksforgeeks.org/interesting-facts-about-null-in-java/
 - https://www.w3schools.com/java/ref_string_contains.asp#:~:text=The%20contains()%20method%20checks,exist%20and%20false%20if%20not.
+- https://www.geeksforgeeks.org/list-size-method-in-java-with-examples/
+- https://www.geeksforgeeks.org/difference-between-and-equals-method-in-java/
+
+Github: https://github.com/Shao-Hang-Li/CourseRegistrationSystem

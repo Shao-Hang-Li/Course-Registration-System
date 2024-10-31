@@ -33,7 +33,7 @@ public class CourseRegistration {
     /**
      * Scanner for inputs
      */
-    private final Scanner scanner;          // Scanner instance for user input
+    private final Scanner scanner;          // Scanner instance for user input and make sure it remains the same for the whole class (CourseRegistration)
 
     /**
      * Initialization for the scanner
@@ -49,7 +49,7 @@ public class CourseRegistration {
      */
     public static void main(String[] args) {                        // Main method
         CourseRegistration application = new CourseRegistration();  // Create a new instance for CourseRegistration
-        application.userInterface();                                        // Start the program
+        application.userInterface();                                // Start the program
     }
 
     /**
@@ -139,7 +139,7 @@ public class CourseRegistration {
 
         for (Course course : courses) {                                             // for each loop that goes over each Course object in the courses arraylist
             System.out.printf("%s %n",course.displayCourseInfo());           // display course info (return a String that we made in displayCourseInfo() in course.java)
-            System.out.println("-------------------------------------------");    // separation line
+            System.out.printf("\n");                                         // New line to have space between each courses (at first, we did a separator line, but it didn't look good. I twas just better to use a space)
         }
     }
 
@@ -147,11 +147,13 @@ public class CourseRegistration {
      * void for adding students
      */
     public void addStudent() {                          //Add student method
+        int studentID;                                  //Variable and type declarations
+
         System.out.printf("Enter student ID: "); //Prompt to enter the student ID
         
         //try method to prevent program break
         try {
-            int studentID = scanner.nextInt();          //take user input and store as an integer
+            studentID = scanner.nextInt();              //take user input and store as an integer
             if (studentID <= 0){                        //if input is negative, throw exception
                 throw new InvalidUserInput("Please enter a valid student number.");
             }
@@ -163,7 +165,7 @@ public class CourseRegistration {
                 if (studentByID(studentID) != null) {                   //check if student already enrolled
                     throw new InvalidUserInput("Student already exist. Registration failed.");
                 }
-                students.add(new Student(studentName, studentID));      //create student object and add to array list
+                students.add(new Student(studentName, studentID));      //create student object if it's unique and add to array list
                 System.out.printf("Student added: studentID=%d, studentName='%s'%n", studentID, studentName);
             }
 
@@ -180,7 +182,7 @@ public class CourseRegistration {
 
         for (Student student : students) {                   //for loop iterates through all the student in the students list
             System.out.printf("%s %n", student.displayStudentInfo());//display student objects
-            System.out.println("-------------------------------------------");
+            System.out.printf("\n");                  //new line to have space between each student  
         }
     }
 
@@ -258,7 +260,7 @@ public class CourseRegistration {
      * @return course code selected
      */
     private Course courseByCode(String courseCode) {        //Method for finding course code (used for registration and was planning to use it for remove, but didn't have time)
-        for (Course course : courses) {                     //For each loop that goes through all the course in the courses list
+        for (Course course : courses) {                     //For each loop that goes through all the course in the courses list (technically (int courseIndex = 0; courseIndex < courses.size(); courseIndex++)
             if (course.getCourseCode().equals(courseCode)) {//If the input equals a course code, it will return the course object (error if I use == due to comparing Strings )
                 return course;                              //(Codeium correction: VSC extension)
             }
@@ -272,8 +274,8 @@ public class CourseRegistration {
      * @return student id selected
      */
     private Student studentByID(int studentID) {        //Method for finding student ID (used for registration and was planning to use it for remove, but didn't have time)
-        for (Student student : students) {              //For each loop that goes through all the student in the students list
-            if (student.getStudentID() ==studentID) {  //If input equals a student code, return the student object ==  (int cannot be dereferenced: Codeium correction)
+        for (Student student : students) {              //For each loop that goes through all the student in the students list (technically int studentIndex = 0; studentIndex < courses.size(); studentIndex++)
+            if (student.getStudentID() ==studentID) {   //If input equals a student code, return the student object ==  (int cannot be dereferenced: Codeium correction)
                 return student;
             }
         }
@@ -281,3 +283,6 @@ public class CourseRegistration {
     }
 }
 
+// Note: We wanted to ad a remove course method by checking the student ID and course code. If it's the same, remove the registered student (same logic as registration AND).  
+// But we didn't have time to implement it.
+// And we wanted to create an User input class with the main, but it had problems, so we put everything in CourseRegistration.java.

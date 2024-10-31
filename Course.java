@@ -19,7 +19,8 @@ public class Course {
     /**
      * Course code of classes
      */
-    private final String courseCode;                         // Unique code for the course
+    private final String courseCode;                         // Unique code for the course (Field courseCode can be final: codeium change added Final)
+                                                             // However, it makes sense since once the variable is given, it cannot be reassigned anymore (avoid modifications)
     /**
      * Course name of classes
      */
@@ -31,7 +32,7 @@ public class Course {
     /**
      * Array for enrolled students
      */
-    private final ArrayList<Integer> enrolledStudents;       // List of student IDs
+    private final ArrayList<Integer> enrolledStudents;       // List of student IDs (Also, even if it's final, we can still change in the list)
     /**
      * This is the setter for the course code, course name, professor, and enrolled students
      * @param courseCode initialize course code
